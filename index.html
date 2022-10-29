@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tes Transisi Code</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <!-- section kiri -->
+        <div class="section-left">
+          <span class="iconsText"
+            ><i class="fa fa-align-right" aria-hidden="true"></i
+          ></span>
+          <img class="dots1" src="/assets/76559.png" alt="" />
+          <img class="dots2" src="/assets/76559.png" alt="" />
+          <div class="content">
+            <div class="header">
+              <h2>Hi Samantha</h2>
+              <span>Welcome back to the workplace, we missed You!</span>
+            </div>
+
+            <div class="section-search">
+              <form action="">
+                <i class="fa fa-search icon"> </i>
+                <input
+                  class="input-field"
+                  type="text"
+                  placeholder="Search Task or Project..."
+                />
+              </form>
+            </div>
+            <!-- isi project -->
+            <div class="project">
+              <h2>Projects <span>(13)</span></h2>
+              <div class="list">
+                <div class="image">
+                  <h2>GH</h2>
+                  <img src="/assets/10703557.jpg" />
+                  <span>Green House</span>
+                </div>
+                <div class="image">
+                  <h2>CP</h2>
+                  <img
+                    src="/assets/99-992191_wallpaper-linear-gradient-green-blue-spring-green-dark-e1585911331985.jpg"
+                    class="set-active"
+                  />
+                  <span>Cyber Punk</span>
+                </div>
+                <div class="image notifikasi">
+                  <h2>EC</h2>
+                  <img
+                    src="/assets/white-purple-gradient-background-vector-8347289.jpg"
+                  />
+                  <span>Easy Crypto</span>
+                </div>
+                <div class="image">
+                  <h2>TA</h2>
+                  <img src="/assets/download.jpg" />
+                  <span>Travel App</span>
+                </div>
+                <div class="image notifikasi">
+                  <h2>LP</h2>
+                  <img
+                    src="/assets/gradient-orange-white-linear-1920x1080-c2-ffffff-ff8c00-a-210-f-14.jpg"
+                  />
+                  <span>Landing Page</span>
+                </div>
+                <div class="image more">
+                  <h2>8+</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- section kanan -->
+        <div class="section-right">
+          <div class="content">
+            <div class="header">
+              <div class="title">
+                <h2>Cyber Punk</h2>
+                <span
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Placeat rem optio fugit!</span
+                >
+              </div>
+              <div class="user">
+                <div class="profile-pic">
+                  <img src="/assets/1.jpg" alt="" />
+                  <img src="/assets/2.jpg" alt="" />
+                  <img src="/assets/3.jpg" alt="" />
+                </div>
+                <div class="icon-add">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="Todolist">
+              <div class="header">
+                <h2>Today</h2>
+                <div class="menu-dot">
+                  <div class="doted"></div>
+                  <div class="doted"></div>
+                  <div class="doted"></div>
+                </div>
+              </div>
+              <div class="item-list">
+                <div class="list">
+                  <i class="fa fa-check"></i>
+                  <span>Create initial layout for homepage</span>
+                  <div class="status approved">Approved</div>
+                </div>
+                <div class="list">
+                  <i class="fa fa-check"></i>
+                  <span>Fixing icons with transparant background</span>
+                  <div class="status inprogress">In Progress</div>
+                </div>
+                <div class="list">
+                  <i class="fa fa-check"></i>
+                  <span>Fixing icons with transparant background</span>
+                  <div class="status inprogress">In Progress</div>
+                </div>
+                <div class="list">
+                  <i class="fa fa-check"></i>
+                  <span>Create initial layout for homepage</span>
+                  <div class="status inprogress">In Progress</div>
+                </div>
+                <div class="list">
+                  <i class="fa fa-circle"></i>
+                  <span>Discussions regarding workflow improvement</span>
+                  <div class="status inreview">In Review</div>
+                </div>
+                <div class="list">
+                  <i class="fa fa-circle"></i>
+                  <span>Create quotation for app redesign project</span>
+                  <div class="status waiting">Waiting</div>
+                </div>
+              </div>
+            </div>
+            <div class="add-item-list">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="shadow-wrapper"></div>
+      </div>
+    </div>
+
+    <script>
+      // section-left
+      let notif = document.querySelectorAll(".image.notifikasi");
+      notif.forEach((el) => el.appendChild(document.createElement("div")));
+
+      // section-right
+      let item = document.querySelector(".section-right .item-list");
+      const listItem = [
+        "Create initial layout for homepage",
+        "Fixing icon with transparent background",
+        "Disscusions regarding workflow improvement",
+        "Create quotation for app redesign project",
+      ];
+      const status = {
+        approved: "Approved",
+        inprogress: "In Progress",
+        inreview: "In Review",
+        waiting: "Waiting",
+      };
+      const key = Object.keys(status);
+
+      document
+        .querySelector(".add-item-list")
+        .addEventListener("click", addList);
+
+      function addList() {
+        let randomList = Math.floor(Math.random() * 3) + 0;
+        let randomStatus = Math.floor(Math.random() * 3) + 0;
+
+        if (randomStatus > 1) {
+          item.innerHTML += `
+          <div class="list">
+            <i class="fa fa-circle"></i>
+              <span>${listItem[randomList]}</span>
+              <div class="status ${key[randomStatus]}">${
+            status[key[randomStatus]]
+          }</div>
+          </div>`;
+        } else {
+          item.innerHTML += `
+          <div class="list">
+            <i class="fa fa-check"></i>
+              <span>${listItem[randomList]}</span>
+              <div class="status ${key[randomStatus]}">${
+            status[key[randomStatus]]
+          }</div>
+          </div>`;
+        }
+      }
+    </script>
+  </body>
+</html>
